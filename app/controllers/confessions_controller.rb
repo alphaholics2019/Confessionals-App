@@ -33,6 +33,7 @@ class ConfessionsController < ActionController::API
 
     def destroy
       confession.destroy
+
     end
 
     private
