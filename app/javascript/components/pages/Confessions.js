@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import { Card , Button } from "react-bootstrap"
 
 class Confessions extends React.Component {
     constructor(props){
@@ -26,20 +27,17 @@ class Confessions extends React.Component {
       const { confessions } = this.state
       return (
         <React.Fragment>
-            <table>
-                <tbody>
-                    <tr>
-                      <th>Confession</th>
-                    </tr>
-                    {confessions.map((confession, index) =>
-                      <tr key={index}>
-                          <td>{confession.user_id}</td>
-                          <td>{confession.name}</td>
-                          <td>{confession.gif_url}</td>
-                      </tr>
-                    )}
-                </tbody>
-            </table>
+        {confessions.map((confession, index) =>
+          <Card style={{ width: '18rem' }} key={index}>
+            <Card.Img variant="top" src={confession.gif_url} />
+            <Card.Body>
+              <Card.Text>
+                {confession.name}
+              </Card.Text>
+              <Button variant="primary">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        )}
         </React.Fragment>
       );
     }
