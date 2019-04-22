@@ -7,6 +7,6 @@ Rails.application.routes.draw do
       get "protected", to: "pages#protected", as: :protected
       root to: 'pages#protected'
     end
-    
+
     root to: 'pages#unprotected'
 end

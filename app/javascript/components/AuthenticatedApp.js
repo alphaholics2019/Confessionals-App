@@ -26,7 +26,7 @@ class AuthenticatedApp extends React.Component {
                 <Link to='/confessions' className="nav-link"><font color="black">My Confessions</font></Link>
               </li>
               <li className="nav-item">
-                <Link to='/confess' className="nav-link"><font color="black">New Confession</font></Link>
+                <Link to='/confess' className="nav-link"><font color="black">Confess</font></Link>
               </li>
             </ul>
           </div>

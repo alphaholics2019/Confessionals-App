@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { DropdownButton, Dropdown } from 'react-bootstrap'
+import Confessions from "./Confessions"
 
 class Home extends React.Component {
   constructor(props){
@@ -54,6 +55,8 @@ class Home extends React.Component {
         </tr>
       </tbody>
       </table>
+      <h1>Anything you want to Confess?</h1>
+        <Confessions/>
       </React.Fragment>
     );
   }
