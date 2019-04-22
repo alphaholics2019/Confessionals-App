@@ -1,7 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Tenor from "react-tenor"
+import GifList from "../GifList"
+import SearchBar from "../SearchBar"
 import { Form, Button } from "react-bootstrap"
+import request from "superagent"
 
 class Confess extends React.Component {
   constructor(props){
@@ -9,10 +11,11 @@ class Confess extends React.Component {
   this.state = {
     form:{
       name: "",
-      gif_url: ""
-      }
+      gif_url: "",
+      gifs: []
     }
   }
+}
 
     handleFormChange = (event) => {
       const { form } = this.state
@@ -38,13 +41,20 @@ class Confess extends React.Component {
            .then((resp) => {
                let json = resp.json()
 
-
                return json
            })
     }
+    
+     handleTermChange = (term) => {
+    const url = `http://api.giphy.com/v1/gifs/search?q=${term.replace(/\s/g, '+')}&api_key=fQTt4fDxOpLvR7UCN5XCwQt8QdJrCx9Y`;
+
+    request.get(url, (err, res) => {
+        this.setState({ gifs: res.body.data })
+    });
+  }
 
     render() {
-        const { name } = this.state.form
+        const { name, gif_url } = this.state.form
         console.log(this.state);
         return (
             <div>
@@ -65,6 +75,14 @@ class Confess extends React.Component {
                 token="98ZLNV4AZJG0"
                 onSelect={this.handleGifSelect}
               />
+                   <SearchBar
+          onTermChange={term => this.handleTermChange(term)}
+        />
+        <br/>
+        <GifList
+          gifs={this.state.gifs}
+          gifSelect={this.handleGifSelect}
+        />
             </div>
             )
         }
