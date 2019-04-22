@@ -26,7 +26,6 @@ class Confessions extends React.Component {
       const { confessions } = this.state
       return (
         <React.Fragment>
-            <h1>My Confessions</h1>
             <table>
                 <tbody>
                     <tr>

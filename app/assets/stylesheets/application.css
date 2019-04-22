@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
  .react-tenor {
    background-color: #f7f7f7;
    border: 1px solid #ccc;
