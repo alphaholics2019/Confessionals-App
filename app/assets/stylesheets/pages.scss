@@ -3,11 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
     margin-left: 5%;
-    margin-top: 15px;
 }
 .actions {
     margin-top: 10px;
 }
-h2 {
+h1, h2 {
     font-family: fantasy;
+    margin-top: 15px;
+}
+h1 {
+    text-align: center;
+}
+label{
+    margin-right: 15px;
+}
+input {
+    margin-right: 5px;
+}
+form {
+    margin-bottom: 15px;
 }

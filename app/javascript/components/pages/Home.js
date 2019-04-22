@@ -5,7 +5,7 @@ class Home extends React.Component {
   render () {
     return (
       <React.Fragment>
-        Home Page
+        <h1>Home Page</h1>
       </React.Fragment>
     );
   }

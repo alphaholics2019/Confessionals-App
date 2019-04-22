@@ -16,6 +16,7 @@ class Confess extends React.Component {
     render() {
         return (
           <div>
+            <h1>Confess Here</h1>
             <form>
                 <label>Confession Box</label>
                 <input type="text" name="name" />
