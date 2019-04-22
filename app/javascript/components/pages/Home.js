@@ -1,11 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import Confessions from "./Confessions"
 
 class Home extends React.Component {
   render () {
     return (
       <React.Fragment>
-        Home Page
+      <h1>Anything you want to Confess?</h1>
+        <Confessions/>
       </React.Fragment>
     );
   }

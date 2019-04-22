@@ -1,7 +1,5 @@
-<% if user_signed_in? %>
-  <%= react_component('AuthenticatedApp') %>
-<% else %>
-  <%= link_to('Login', new_user_session_path)  %>
-  <%= link_to('Register', new_user_registration_path)  %>
-  <%= react_component('UnauthenticatedApp') %>
-<% end %>            
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-nav mr-auto d-flex justify-content-around" id="navbarColor03">
+  <h2><font color="black">Welcome to the Confessional!</font></h2>
+  <%= button_to('Login', new_user_session_path)  %>
+</nav
+<%= react_component('UnauthenticatedApp') %>

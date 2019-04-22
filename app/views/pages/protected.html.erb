@@ -1,2 +1,16 @@
-<%= react_component('AuthenticatedApp', current_user: current_user) %>
-<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+<%= react_component('AuthenticatedApp', current_user: form_authenticity_token) %>
+<div class="fixed-bottom" style="color: black">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"><a class="nav-link"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></a></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= button_to('Logout', destroy_user_session_path, method: :delete) %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
